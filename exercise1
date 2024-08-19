@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace HelloWorld
+{
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+		  decimal num = 0;
+		  string letter = "";
+			string[] values = { "12.3", "45", "ABC", "11", "DEF" };
+
+      foreach (string val in values)
+      {
+        
+        if (decimal.TryParse(val, out decimal result)) {
+          num += Convert.ToDecimal(val);
+        } else {
+          Console.WriteLine(val);
+          letter += val;
+        }
+      }
+      Console.WriteLine("Message: " + letter);
+      Console.WriteLine("Total: " + num);
+		}
+	}
+}
+
+// string[] values = { "12.3", "45", "ABC", "11", "DEF" };
+
+// foreach (int val in values)
+// {
+//   Console.WriteLine(val);
+// }
